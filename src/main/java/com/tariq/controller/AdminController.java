@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
+@RequestMapping(value = "/api/")
 public record AdminController() {
-    @PostMapping(name = "/register")
-    public ResponseEntity<Map<String,Object>> getRegister()
+    @PostMapping(value = "/register")
+    public ResponseEntity<Map<String,Object>> getRegisterWithUs()
     {
         ResponseEntity<Map<String, Object>> o = null;
         return o;
     }
     
-    @PostMapping(name = "/login")
+    @PostMapping(value = "/login")
     public ResponseEntity<Map<String,Object>> loginWithUs()
     {
         ResponseEntity<Map<String, Object>> o = null;
