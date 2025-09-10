@@ -25,11 +25,10 @@ public class AdminController {
         blogsService.register(user);
         return ResponseEntity.ok("Registered successfully");
     }
-    
+
     @PostMapping(value = "/login")
-    public ResponseEntity<Map<String,Object>> loginWithUs()
-    {
-        ResponseEntity<Map<String, Object>> o = null;
-        return o;
+    public ResponseEntity<Map<String,Object>> loginWithUs(@RequestBody UserDetails user) throws BusinessException {
+        Map<String, Object> result = blogsService.login(user);
+        return ResponseEntity.ok(result);
     }
 }
