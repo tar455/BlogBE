@@ -2,6 +2,8 @@ package com.tariq.controller;
 
 
 import com.tariq.service.BlogsService;
+import com.tariq.util.JwtUtil;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -13,10 +15,11 @@ import java.util.Map;
 @RestController
 @RequestMapping
 @RequiredArgsConstructor
+@SecurityRequirement(name = "BearerAuth")
 public class BlogsController {
 
     private final BlogsService blogsService;
-
+    private final JwtUtil jwtUtil;
     @GetMapping(value = "/value")
     public String getAllBlogs() {
         String str = "hello";
