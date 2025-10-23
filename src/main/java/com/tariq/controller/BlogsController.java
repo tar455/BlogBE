@@ -49,4 +49,9 @@ public class BlogsController {
         blogsService.postBlog(postBlogVO);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
+
+    @PutMapping(value = "/edit")
+    public ResponseEntity<String> editBlogData(@RequestBody BlogDetails editBlogDetails) {
+        return new ResponseEntity<>(null,HttpStatus.OK);
+    }
 }
