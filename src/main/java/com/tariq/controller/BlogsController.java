@@ -2,6 +2,7 @@ package com.tariq.controller;
 
 
 import com.tariq.model.BlogDetails;
+import com.tariq.model.PostComments;
 import com.tariq.service.BlogsService;
 import com.tariq.util.JwtUtil;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -53,5 +54,11 @@ public class BlogsController {
     @PutMapping(value = "/edit")
     public ResponseEntity<String> editBlogData(@RequestBody BlogDetails editBlogDetails) {
         return new ResponseEntity<>(null,HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/comments")
+    public ResponseEntity<String> putYourComments(@RequestBody PostComments comments) {
+
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
