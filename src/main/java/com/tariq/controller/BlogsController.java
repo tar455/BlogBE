@@ -1,6 +1,7 @@
 package com.tariq.controller;
 
 
+import com.tariq.model.BlogDetails;
 import com.tariq.service.BlogsService;
 import com.tariq.util.JwtUtil;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -39,6 +40,13 @@ public class BlogsController {
             @RequestParam String total,
             @RequestParam String sortBy
     ) {
+        return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/post")
+    public ResponseEntity<String> getPostBlog(@RequestBody BlogDetails postBlogVO) {
+
+        blogsService.postBlog(postBlogVO);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }

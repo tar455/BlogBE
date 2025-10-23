@@ -1,6 +1,7 @@
 package com.tariq.serviceImpl;
 
 import com.tariq.exception.BusinessException;
+import com.tariq.model.BlogDetails;
 import com.tariq.model.UserDetails;
 import com.tariq.repository.UserDetailsRepository;
 import com.tariq.service.BlogsService;
@@ -71,5 +72,10 @@ public class BlogsServiceImpl implements BlogsService {
             throw new BusinessException("123", "Invalid credentials");
 
         return result;
+    }
+
+    @Override
+    public void postBlog(BlogDetails blogDetails) {
+        // Blog post logic here
     }
 }
